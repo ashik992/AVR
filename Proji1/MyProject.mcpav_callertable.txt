@@ -1,2 +1,3 @@
 main
+	show
 	__CC2DW

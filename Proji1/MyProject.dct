@@ -1005,7 +1005,6 @@ mux3
 mux3_bit
 mux4
 mux4_bit
-none
 nr_free_blocks
 num
 ocdr
@@ -1441,6 +1440,7 @@ se_bit
 sfior
 shorttohex
 shorttostr
+show
 sin
 sine3
 sinh
