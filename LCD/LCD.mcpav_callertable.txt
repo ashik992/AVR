@@ -1,0 +1,11 @@
+main
+	sendCommand
+	ss
+	name
+		sendString
+			sendData
+		sendCommand
+	dept
+		sendString
+		sendCommand
+	__CC2DW
