@@ -11,141 +11,141 @@ void ss(int num);
 
 void main()
 {
-DDRA = 0xFF;
-DDRC = 0xFF;
-DDRD = 0xFF;
+    DDRA = 0xFF;
+    DDRC = 0xFF;
+    DDRD = 0xFF;
 
-Delay_us(2000);
-sendCommand(0x38) ;
-sendCommand(0x0C);
-sendCommand(0x01);
-Delay_us(2000) ;
+    Delay_us(2000);
+    sendCommand(0x38) ;
+    sendCommand(0x0C);
+    sendCommand(0x01);
+    Delay_us(2000) ;
 
-while(1)
-{
-ss(1);
-name();
-ONS;
+    while(1)
+    {
+        ss(1);
+        name();
+        ONS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(2);
-HFS;
+        ss(2);
+        HFS;
 
-sendCommand(0x01);
-HFS;
+        sendCommand(0x01);
+        HFS;
 
-ss(11);
-dept();
-HFS;
+        ss(11);
+        dept();
+        HFS;
 
-ss(10);
-ONS;
+        ss(10);
+        ONS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(2);
-sendCommand(0x01);
-HFS;
+        ss(2);
+        sendCommand(0x01);
+        HFS;
 
-name();
-HFS;
+        name();
+        HFS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(0);
-ONS;
+        ss(0);
+        ONS;
 
-sendCommand(0x01);
-ss(11);
-HFS;
+        sendCommand(0x01);
+        ss(11);
+        HFS;
 
-ss(9);
-dept();
-ONS;
+        ss(9);
+        dept();
+        ONS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(7);
-HFS;
+        ss(7);
+        HFS;
 
-sendCommand(0x01);
-HFS;
+        sendCommand(0x01);
+        HFS;
 
-ss(11);
-name();
-HFS;
+        ss(11);
+        name();
+        HFS;
 
-ss(8);
-ONS;
+        ss(8);
+        ONS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(10);
-sendCommand(0x01);
-HFS;
+        ss(10);
+        sendCommand(0x01);
+        HFS;
 
-dept();
-HFS;
+        dept();
+        HFS;
 
-ss(11);
-HFS;
+        ss(11);
+        HFS;
 
-ss(1);
-ONS;
+        ss(1);
+        ONS;
 
-sendCommand(0x01);
-ss(11);
-HFS;
+        sendCommand(0x01);
+        ss(11);
+        HFS;
 
-}
+    }
 }
 
 void sendCommand (unsigned char command)
 {
-PORTD = command;
-PORTC = 0b00000000;
-PORTC = 0b01000000;
-Delay_us(1);
-PORTC = 0b00000000;
-Delay_us(100);
+    PORTD = command;
+    PORTC = 0b00000000;
+    PORTC = 0b01000000;
+    Delay_us(1);
+    PORTC = 0b00000000;
+    Delay_us(100);
 }
 
 void sendData (unsigned char dat)
 {
-PORTD = dat;
-PORTC = 0b00000001;
-PORTC = 0b01000001;
-Delay_us(1);
-PORTC = 0b00000001;
-Delay_us(100);
+    PORTD = dat;
+    PORTC = 0b00000001;
+    PORTC = 0b01000001;
+    Delay_us(1);
+    PORTC = 0b00000001;
+    Delay_us(100);
 }
 
 void sendString(char *str){
-     int i;
-     
-     for(i=0;str[i]!='\0'; i++){
-                           sendData(str[i]);
-     }
+    int i;
+
+    for(i=0;str[i]!='\0'; i++){
+        sendData(str[i]);
+    }
 }
 
 void ss(int nm){
-     PORTA = num[nm];
+    PORTA = num[nm];
 }
 
 void name(){
-sendString("  Ashik Ahmed");
-sendCommand(0xC0);
-sendString("   12-20978-1");
+    sendString("  Ashik Ahmed");
+    sendCommand(0xC0);
+    sendString("   12-20978-1");
 }
 
 void dept(){
-sendString("      CSE");
-sendCommand(0xC0);
-sendString("      131");
+    sendString("      CSE");
+    sendCommand(0xC0);
+    sendString("      131");
 }
