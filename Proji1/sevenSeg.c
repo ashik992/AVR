@@ -13,20 +13,7 @@ void show(int dig){
 void main() {
      int i = 0;
      DDRA = 0xFF;
-     while(1){
-              show(1);
-              show(2);
-              show(10);
-              show(2);
-              show(0);
-              show(9);
-              show(7);
-              show(8);
-              show(10);
-              show(1);
-              
-              ONS;
-              ONS;
-     }
+
+     DDRA = 0xFF;
 
 }
